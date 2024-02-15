@@ -24,7 +24,8 @@ DoubleOrbitControl::DoubleOrbitControl(const float left_center_x, const float le
 void DoubleOrbitControl::Update()
 {
 	//TODO: is GetDt deterministic?
-	current_angle_ += kTwoPi * CP_System_GetDt() / duration_secs_;
+	//current_angle_ += kTwoPi * CP_System_GetDt() / duration_secs_;
+	current_angle_ += kTwoPi * (1.0f / 30.0f) / duration_secs_;
 	if (current_angle_ > kTwoPi)
 	{
 		isOrbitingLeft_ = !isOrbitingLeft_;
